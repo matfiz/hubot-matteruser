@@ -16,7 +16,6 @@ USER hubot-matteruser
 RUN npm install -g yo
 RUN npm install -g generator-hubot
 
-COPY external-scripts.json /usr/src/hubot-matteruser/
 RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="${hubot_name}" --description="${hubot_desciption}" --defaults \
 && sed -i 's/"heroku"/"hubot-standup", "hubot-daily-update", "hubot-standup-alarm"' external-scripts.json
 
