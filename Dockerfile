@@ -17,7 +17,10 @@ RUN npm install -g yo
 RUN npm install -g generator-hubot
 
 RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="${hubot_name}" --description="${hubot_desciption}" --defaults \
-&& sed -i 's/"heroku"/"hubot-standup", "hubot-daily-update", "hubot-standup-alarm"/' external-scripts.json
+&& sed -i '/heroku/d' external-scripts.json
+
+RUN npm install hubot-daily-update hubot-standup-alarm hubot-standup --save \
+&& sed -i '$s/]/,"hubot-standup", "hubot-daily-update", "hubot-standup-alarm"}/' external-scripts.json 
 
 RUN rm hubot-scripts.json
 
