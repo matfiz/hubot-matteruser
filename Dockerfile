@@ -20,7 +20,7 @@ RUN echo "No" | yo hubot --adapter matteruser --owner="${hubot_owner}" --name="$
 && sed -i '/heroku/d' external-scripts.json
 
 RUN npm install hubot-daily-update hubot-standup-alarm hubot-standup --save \
-&& sed -i '$s/]/,"hubot-standup", "hubot-daily-update", "hubot-standup-alarm"}/' external-scripts.json 
+&& sed -i '$s/]/,"hubot-standup", "hubot-daily-update", "hubot-standup-alarm"]/' external-scripts.json 
 
 RUN rm hubot-scripts.json
 
