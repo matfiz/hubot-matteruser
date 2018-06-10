@@ -30,6 +30,9 @@
   "dependencies": {
     "mattermost-client": "^4.4.0",
     "parent-require": "^1.0.0",
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "hubot-daily-update": "^1.0.0",
+    "hubot-standup-alarm": "*",
+    "hubot-standup": "*"
   }
 }
